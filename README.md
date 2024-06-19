@@ -2,7 +2,7 @@
 
 ### Project Overview
 
-The Weight Tracker API and React Application help users track the weight of multiple entities, such as people and animals. Users can register entities, add weight records, view data, generate graphs, and determine weight trends. The React frontend offers an intuitive interface for interacting with the API.
+The Weight Tracker API and React Application help users track the weight of multiple entities, such as people and animals. Users can register entities, add weight records, view data, generate graphs, determine weight trends, and compare the weight of two entities. The React frontend offers an intuitive interface for interacting with the API.
 
 ### Features
 
@@ -10,6 +10,7 @@ The Weight Tracker API and React Application help users track the weight of mult
 - **Add Weight Records**: Record weight entries for each entity.
 - **View Data**: Display the weight records of a selected entity.
 - **Generate Graphs**: Visualize the weight trends over time.
+- **Compare Entities**: Compare the weight of two entities in the same graph with different colors.
 - **Modify Entity Names**: Update the name of an existing entity.
 - **Delete Entities**: Remove an entity along with all its weight records.
 - **Modify Weight Records**: Update an existing weight record for a specific entity and date.
@@ -143,6 +144,7 @@ The Weight Tracker API and React Application help users track the weight of mult
 3. **ViewData**:
    - Allows the user to view the weight records of a selected entity.
    - Automatically updates the displayed data when the selected entity is changed.
+   - Allows the user to compare the weight of two entities in the same graph with different colors.
 
 4. **ModifyEntity**:
    - Allows the user to modify the name of an existing entity.
@@ -168,13 +170,20 @@ The Weight Tracker API and React Application help users track the weight of mult
 3. **View weight records**:
    - Select the entity from the dropdown list to automatically view its weight records.
 
-4. **Modify an entity name**:
+4. **Compare entities**:
+   - Select the first entity from the dropdown list.
+   - Click the "Compare with another entity" button.
+   - Select the second entity from the new dropdown list.
+   - Choose different colors for each entity using the color pickers.
+   - The graph will display the weight data for both entities.
+
+5. **Modify an entity name**:
    - Select the current name of the entity from the dropdown list.
    - Enter the new name and click the "Modify Name" button.
 
-5. **Delete an entity**:
+6. **Delete an entity**:
    - Select the entity from the dropdown list and click the "Delete" button.
 
-6. **Modify a weight record**:
+7. **Modify a weight record**:
    - Select the entity from the dropdown list.
    - Enter the date of the record to be modified and the new weight, then click the "Modify Weight" button.
