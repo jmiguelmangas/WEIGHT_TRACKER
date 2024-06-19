@@ -19,15 +19,18 @@ def agregar_registro():
     
     for entidad in datos["entities"]:
         if entidad["nombre"] == nombre:
+            for registro in entidad["pesos"]:
+                if registro["fecha"] == fecha:
+                    registro["peso"] = peso
+                    with open(archivo, 'w') as f:
+                        json.dump(datos, f, indent=4)
+                    return jsonify({"message": "Registro actualizado exitosamente"}), 200
             entidad["pesos"].append({"fecha": fecha, "peso": peso})
-            break
-    else:
-        return jsonify({"message": "Entidad no encontrada"}), 404
+            with open(archivo, 'w') as f:
+                json.dump(datos, f, indent=4)
+            return jsonify({"message": "Registro agregado exitosamente"}), 201
     
-    with open(archivo, 'w') as f:
-        json.dump(datos, f, indent=4)
-    
-    return jsonify({"message": "Registro agregado exitosamente"}), 201
+    return jsonify({"message": "Entidad no encontrada"}), 404
 
 def init_app(app):
     app.register_blueprint(bp)

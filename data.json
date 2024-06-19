@@ -1,15 +1,19 @@
 {
     "entities": [
         {
-            "nombre": "Leica",
+            "nombre": "LeicaNew",
             "pesos": [
                 {
                     "fecha": "2024-06-20",
-                    "peso": 21.2
+                    "peso": 21.7
                 },
                 {
                     "fecha": "2024-06-21",
-                    "peso": 21.3
+                    "peso": 21.5
+                },
+                {
+                    "fecha": "2024-06-23",
+                    "peso": 24.5
                 }
             ]
         }
