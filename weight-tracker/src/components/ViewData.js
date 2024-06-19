@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { format, parseISO } from 'date-fns';
 import EntitySelector from './EntitySelector';
+import WeightChart from './WeightChart';
 
-function ViewData({ refresh, setRefresh }) {
-  const [selectedEntity, setSelectedEntity] = useState('');
+function ViewData({ refresh, setRefresh, selectedEntity, setSelectedEntity }) {
   const [data, setData] = useState([]);
 
   const fetchData = async (entity) => {
+    if (!entity) {
+      setData([]);
+      return;
+    }
+
     try {
       const response = await axios.get(`http://127.0.0.1:5000/data?nombre=${entity}`);
       if (response.data.length > 0) {
-        setData(response.data[0].pesos);
+        const sortedData = response.data[0].pesos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+        setData(sortedData);
       } else {
         setData([]);
       }
@@ -21,9 +28,7 @@ function ViewData({ refresh, setRefresh }) {
   };
 
   useEffect(() => {
-    if (selectedEntity) {
-      fetchData(selectedEntity);
-    }
+    fetchData(selectedEntity);
   }, [selectedEntity, refresh]);
 
   return (
@@ -35,10 +40,11 @@ function ViewData({ refresh, setRefresh }) {
         <ul>
           {data.map((peso, idx) => (
             <li key={idx}>
-              {peso.fecha}: {peso.peso} kg
+              {format(parseISO(peso.fecha), 'dd/MM/yyyy')} - {peso.peso} kg
             </li>
           ))}
         </ul>
+        {data.length > 0 && <WeightChart data={data} />}
       </div>
     </div>
   );

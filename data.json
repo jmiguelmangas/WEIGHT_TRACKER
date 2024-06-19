@@ -1,24 +1,23 @@
 {
     "entities": [
         {
-            "nombre": "Kanon",
+            "nombre": "Leica",
             "pesos": [
                 {
                     "fecha": "2024-06-19",
                     "peso": "15"
                 },
                 {
-                    "fecha": "2024-06-23",
-                    "peso": "23"
-                }
-            ]
-        },
-        {
-            "nombre": "Leica",
-            "pesos": [
+                    "fecha": "2024-06-20",
+                    "peso": "14"
+                },
                 {
-                    "fecha": "2024-06-19",
-                    "peso": "15"
+                    "fecha": "2024-06-21",
+                    "peso": "13.5"
+                },
+                {
+                    "fecha": "2024-06-10",
+                    "peso": "16"
                 }
             ]
         }

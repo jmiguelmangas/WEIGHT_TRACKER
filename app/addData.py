@@ -22,10 +22,12 @@ def agregar_registro():
             for registro in entidad["pesos"]:
                 if registro["fecha"] == fecha:
                     registro["peso"] = peso
+                    entidad["pesos"].sort(key=lambda x: x["fecha"])  # Ordenar por fecha
                     with open(archivo, 'w') as f:
                         json.dump(datos, f, indent=4)
                     return jsonify({"message": "Registro actualizado exitosamente"}), 200
             entidad["pesos"].append({"fecha": fecha, "peso": peso})
+            entidad["pesos"].sort(key=lambda x: x["fecha"])  # Ordenar por fecha
             with open(archivo, 'w') as f:
                 json.dump(datos, f, indent=4)
             return jsonify({"message": "Registro agregado exitosamente"}), 201

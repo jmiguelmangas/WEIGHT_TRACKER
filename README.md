@@ -1,29 +1,56 @@
-# Weight Tracker API
+# Weight Tracker API and React Application
 
-An API to track the weight of multiple entities, such as people and animals. This application allows you to register new entities, add weight records, read data, create graphs, and determine weight trends.
+### Project Overview
 
-## Project Description
+The Weight Tracker API and React Application help users track the weight of multiple entities, such as people and animals. Users can register entities, add weight records, view data, generate graphs, and determine weight trends. The React frontend offers an intuitive interface for interacting with the API.
 
-This API is designed to allow users to track the weight of multiple entities, whether they are people or animals. The API provides functionalities to register new entities, add weight records, read registered data, generate graphs, and determine weight trends (whether it is increasing or decreasing).
+### Features
 
-### Installation
+- **Register Entities**: Add new entities to track.
+- **Add Weight Records**: Record weight entries for each entity.
+- **View Data**: Display the weight records of a selected entity.
+- **Generate Graphs**: Visualize the weight trends over time.
+- **Modify Entity Names**: Update the name of an existing entity.
+- **Delete Entities**: Remove an entity along with all its weight records.
+- **Modify Weight Records**: Update an existing weight record for a specific entity and date.
 
-1. Clone the repository:
+### Installation and Setup
+
+#### Backend (Weight Tracker API)
+
+1. **Clone the repository**:
     ```bash
     git clone https://github.com/your_user/weight-tracker-api.git
     cd weight-tracker-api
     ```
 
-2. Create a virtual environment and install dependencies:
+2. **Set up a virtual environment and install dependencies**:
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
 
-3. Start the application:
+3. **Start the Flask application**:
     ```bash
     python main.py
+    ```
+
+#### Frontend (React Application)
+
+1. **Navigate to the React application directory**:
+    ```bash
+    cd weight-tracker
+    ```
+
+2. **Install the dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Start the React application**:
+    ```bash
+    npm start
     ```
 
 ### Endpoints
@@ -103,28 +130,7 @@ This API is designed to allow users to track the weight of multiple entities, wh
      ```
    - **Description**: Modifies an existing weight record for a specific entity and date.
 
-## React Frontend
-
-A React application that interacts with the Weight Tracker API to provide a user-friendly interface for managing entities and their weight records.
-
-### Installation
-
-1. Navigate to the React application directory:
-    ```bash
-    cd weight-tracker
-    ```
-
-2. Install the dependencies:
-    ```bash
-    npm install
-    ```
-
-3. Start the React application:
-    ```bash
-    npm start
-    ```
-
-### Components
+### React Components
 
 1. **RegisterEntity**:
    - Allows the user to register a new entity.
