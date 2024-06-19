@@ -3,7 +3,7 @@ from datetime import datetime
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify, request
 
 bp = Blueprint('readData', __name__)
 
@@ -15,6 +15,7 @@ def leer_registros():
     try:
         with open(archivo, 'r') as f:
             datos = json.load(f)
+        return jsonify(datos["entities"]), 200
     except FileNotFoundError:
         return jsonify([]), 200
 
@@ -35,6 +36,8 @@ def crear_grafica():
     except FileNotFoundError:
         return jsonify({"message": "No hay datos para graficar"}), 404
     
+    plt.figure(figsize=(10, 5))
+    
     for entidad in datos["entities"]:
         if entidad["nombre"] in nombres or not nombres:
             fechas = [datetime.strptime(peso['fecha'], "%Y-%m-%d") for peso in entidad["pesos"]]
@@ -49,7 +52,8 @@ def crear_grafica():
     plt.title('Registro de peso')
     plt.legend()
     plt.grid(True)
-    
+    plt.gcf().autofmt_xdate()  # Rotar etiquetas de fecha
+
     plt.savefig('graph.png')
     return jsonify({"message": "Gráfica creada exitosamente"}), 200
 

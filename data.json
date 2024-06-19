@@ -1,3 +1,17 @@
 {
-    "entities": []
+    "entities": [
+        {
+            "nombre": "Leica",
+            "pesos": [
+                {
+                    "fecha": "2024-06-20",
+                    "peso": 21.2
+                },
+                {
+                    "fecha": "2024-06-21",
+                    "peso": 21.3
+                }
+            ]
+        }
+    ]
 }

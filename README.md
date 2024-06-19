@@ -1,77 +1,8 @@
 # Weight Tracker API
 
-Una API para rastrear el peso de múltiples entidades, como personas y animales. Esta aplicación permite registrar nuevas entidades, agregar registros de peso, leer datos, crear gráficos y determinar tendencias de peso.
+An API to track the weight of multiple entities, such as people and animals. This application allows you to register new entities, add weight records, read data, create graphs, and determine weight trends.
 
-## Descripción en Español
-
-### Descripción del Proyecto
-
-Esta API está diseñada para permitir a los usuarios rastrear el peso de múltiples entidades, ya sean personas o animales. La API ofrece funcionalidades para registrar nuevas entidades, agregar registros de peso, leer los datos registrados, generar gráficos y determinar la tendencia de peso (si está aumentando o disminuyendo).
-
-### Instalación
-
-1. Clona el repositorio:
-    ```bash
-    git clone https://github.com/tu_usuario/weight-tracker-api.git
-    cd weight-tracker-api
-    ```
-
-2. Crea un entorno virtual e instala las dependencias:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
-
-3. Inicia la aplicación:
-    ```bash
-    python main.py
-    ```
-
-### Endpoints
-
-1. **Registrar entidad**:
-   - **URL**: `/register`
-   - **Método**: `POST`
-   - **Cuerpo de la solicitud**:
-     ```json
-     {
-         "nombre": "NombreDeLaEntidad"
-     }
-     ```
-   - **Descripción**: Registra una nueva entidad.
-
-2. **Agregar registro**:
-   - **URL**: `/add`
-   - **Método**: `POST`
-   - **Cuerpo de la solicitud**:
-     ```json
-     {
-         "nombre": "NombreDeLaEntidad",
-         "fecha": "YYYY-MM-DD",
-         "peso": PesoEnKg
-     }
-     ```
-   - **Descripción**: Agrega un nuevo registro de peso para una entidad.
-
-3. **Leer registros**:
-   - **URL**: `/data?nombre=Entidad1&nombre=Entidad2`
-   - **Método**: `GET`
-   - **Descripción**: Devuelve los registros de las entidades especificadas. Si no se especifica ninguna entidad, devuelve todos los registros.
-
-4. **Crear gráfica**:
-   - **URL**: `/graph?nombre=Entidad1&nombre=Entidad2`
-   - **Método**: `GET`
-   - **Descripción**: Crea una gráfica de los pesos para las entidades especificadas. Si no se especifica ninguna entidad, crea una gráfica para todas las entidades.
-
-5. **Determinar tendencia**:
-   - **URL**: `/trend?nombre=NombreDeLaEntidad`
-   - **Método**: `GET`
-   - **Descripción**: Calcula y devuelve la tendencia de peso para la entidad especificada.
-
-## English Description
-
-### Project Description
+## Project Description
 
 This API is designed to allow users to track the weight of multiple entities, whether they are people or animals. The API provides functionalities to register new entities, add weight records, read registered data, generate graphs, and determine weight trends (whether it is increasing or decreasing).
 
@@ -135,3 +66,39 @@ This API is designed to allow users to track the weight of multiple entities, wh
    - **URL**: `/trend?nombre=EntityName`
    - **Method**: `GET`
    - **Description**: Calculates and returns the weight trend for the specified entity.
+
+6. **Modify entity name**:
+   - **URL**: `/modify-entity`
+   - **Method**: `PUT`
+   - **Request Body**:
+     ```json
+     {
+         "nombre_actual": "CurrentName",
+         "nombre_nuevo": "NewName"
+     }
+     ```
+   - **Description**: Modifies the name of an existing entity.
+
+7. **Delete entity**:
+   - **URL**: `/delete-entity`
+   - **Method**: `DELETE`
+   - **Request Body**:
+     ```json
+     {
+         "nombre": "EntityName"
+     }
+     ```
+   - **Description**: Deletes an entity along with all its weight records.
+
+8. **Modify weight record**:
+   - **URL**: `/modify-weight`
+   - **Method**: `PUT`
+   - **Request Body**:
+     ```json
+     {
+         "nombre": "EntityName",
+         "fecha": "YYYY-MM-DD",
+         "peso_nuevo": WeightInKg
+     }
+     ```
+   - **Description**: Modifies an existing weight record for a specific entity and date.
