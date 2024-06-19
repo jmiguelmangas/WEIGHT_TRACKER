@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { format } from 'date-fns'; // Importar la función format
+import { format } from 'date-fns';
 
 // Registrar los componentes de Chart.js
 ChartJS.register(
@@ -23,17 +23,24 @@ ChartJS.register(
   Legend
 );
 
-const WeightChart = ({ data }) => {
+const WeightChart = ({ data, secondData = [], color = 'rgba(75,192,192,1)', secondColor = 'rgba(255,99,132,1)', firstEntityName, secondEntityName }) => {
   const chartData = {
     labels: data.map(entry => format(new Date(entry.fecha), 'dd/MM/yyyy')),
     datasets: [
       {
-        label: 'Weight (kg)',
+        label: `${firstEntityName} Weight (kg)`,
         data: data.map(entry => entry.peso),
         fill: false,
-        borderColor: 'rgba(75,192,192,1)',
+        borderColor: color,
         tension: 0.1
-      }
+      },
+      ...(secondData.length > 0 ? [{
+        label: `${secondEntityName} Weight (kg)`,
+        data: secondData.map(entry => entry.peso),
+        fill: false,
+        borderColor: secondColor,
+        tension: 0.1
+      }] : [])
     ]
   };
 
