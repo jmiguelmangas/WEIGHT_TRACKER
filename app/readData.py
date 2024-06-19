@@ -15,7 +15,6 @@ def leer_registros():
     try:
         with open(archivo, 'r') as f:
             datos = json.load(f)
-        return jsonify(datos["entities"]), 200
     except FileNotFoundError:
         return jsonify([]), 200
 
