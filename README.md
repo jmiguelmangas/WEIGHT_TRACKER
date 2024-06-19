@@ -102,3 +102,73 @@ This API is designed to allow users to track the weight of multiple entities, wh
      }
      ```
    - **Description**: Modifies an existing weight record for a specific entity and date.
+
+## React Frontend
+
+A React application that interacts with the Weight Tracker API to provide a user-friendly interface for managing entities and their weight records.
+
+### Installation
+
+1. Navigate to the React application directory:
+    ```bash
+    cd weight-tracker
+    ```
+
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Start the React application:
+    ```bash
+    npm start
+    ```
+
+### Components
+
+1. **RegisterEntity**:
+   - Allows the user to register a new entity.
+   - Updates the dropdown list dynamically upon successful registration.
+
+2. **AddWeightRecord**:
+   - Allows the user to add a new weight record for an entity.
+   - The entity can be selected from a dropdown list.
+
+3. **ViewData**:
+   - Allows the user to view the weight records of a selected entity.
+   - Automatically updates the displayed data when the selected entity is changed.
+
+4. **ModifyEntity**:
+   - Allows the user to modify the name of an existing entity.
+   - Updates the dropdown list dynamically upon successful modification.
+
+5. **DeleteEntity**:
+   - Allows the user to delete an entity along with all its weight records.
+   - Updates the dropdown list dynamically upon successful deletion.
+
+6. **ModifyWeightRecord**:
+   - Allows the user to modify an existing weight record for a specific entity and date.
+   - The entity can be selected from a dropdown list.
+
+### Usage
+
+1. **Register a new entity**:
+   - Enter the name of the entity and click the "Register" button.
+
+2. **Add a weight record**:
+   - Select the entity from the dropdown list.
+   - Enter the date and weight, then click the "Add Weight" button.
+
+3. **View weight records**:
+   - Select the entity from the dropdown list to automatically view its weight records.
+
+4. **Modify an entity name**:
+   - Select the current name of the entity from the dropdown list.
+   - Enter the new name and click the "Modify Name" button.
+
+5. **Delete an entity**:
+   - Select the entity from the dropdown list and click the "Delete" button.
+
+6. **Modify a weight record**:
+   - Select the entity from the dropdown list.
+   - Enter the date of the record to be modified and the new weight, then click the "Modify Weight" button.
