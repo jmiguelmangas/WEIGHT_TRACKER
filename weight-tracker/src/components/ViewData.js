@@ -4,7 +4,8 @@ import { format, parseISO } from 'date-fns';
 import EntitySelector from './EntitySelector';
 import WeightChart from './WeightChart';
 import { ChromePicker } from 'react-color';
-import './ViewData.css'
+import './ViewData.css';
+
 function ViewData({ refresh, setRefresh, selectedEntity, setSelectedEntity }) {
   const [data, setData] = useState([]);
   const [secondEntity, setSecondEntity] = useState('');
@@ -14,6 +15,7 @@ function ViewData({ refresh, setRefresh, selectedEntity, setSelectedEntity }) {
   const [secondColor, setSecondColor] = useState('#0000FF');
   const [showFirstColorPicker, setShowFirstColorPicker] = useState(false);
   const [showSecondColorPicker, setShowSecondColorPicker] = useState(false);
+
 
   const fetchData = async (entity, setDataFunction) => {
     if (!entity) {
@@ -58,7 +60,7 @@ function ViewData({ refresh, setRefresh, selectedEntity, setSelectedEntity }) {
   };
 
   return (
-    <div>
+    <div className="view-data">
       <h2>View Data</h2>
       <EntitySelector selectedEntity={selectedEntity} setSelectedEntity={setSelectedEntity} refresh={refresh} />
       <div>

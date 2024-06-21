@@ -10,28 +10,17 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
   
-  .view-data h2 {
+  .view-data h2, .view-data h3 {
     margin-top: 0;
     color: var(--text-color);
   }
   
-  .form-group {
-    margin-bottom: 15px;
+  .view-data ul {
+    list-style-type: none;
+    padding: 0;
   }
   
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color);
-  }
-  
-  .form-group input, 
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--input-border-color);
-    border-radius: 5px;
-    background-color: var(--input-background-color);
+  .view-data ul li {
     color: var(--text-color);
   }
   
@@ -43,5 +32,16 @@
   
   .color-picker button {
     margin-right: 10px;
+  }
+  
+  .color-picker .chrome-picker {
+    margin-top: 10px;
+  }
+  
+  .color-picker div {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-left: 10px;
   }
   
