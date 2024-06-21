@@ -1,189 +1,121 @@
-# Weight Tracker API and React Application
+# Weight Tracker
 
-### Project Overview
+This Weight Tracker application allows users to monitor and track the weight of multiple entities, such as people and animals. The system provides functionalities to register new entities, add weight records, view data, generate graphs, and determine weight trends. The application includes both a backend API and a frontend built with React.
 
-The Weight Tracker API and React Application help users track the weight of multiple entities, such as people and animals. Users can register entities, add weight records, view data, generate graphs, determine weight trends, and compare the weight of two entities. The React frontend offers an intuitive interface for interacting with the API.
+## Features
 
-### Features
+- **Register Entities:** Register new entities with relevant details.
+- **Add Weight Records:** Add weight records for registered entities.
+- **View Data:** View and compare weight data for entities with visual graphs.
+- **Modify Entities:** Update details of registered entities.
+- **Delete Entities:** Remove registered entities and their weight records.
+- **Dark and Light Mode:** Toggle between dark and light themes.
 
-- **Register Entities**: Add new entities to track.
-- **Add Weight Records**: Record weight entries for each entity.
-- **View Data**: Display the weight records of a selected entity.
-- **Generate Graphs**: Visualize the weight trends over time.
-- **Compare Entities**: Compare the weight of two entities in the same graph with different colors.
-- **Modify Entity Names**: Update the name of an existing entity.
-- **Delete Entities**: Remove an entity along with all its weight records.
-- **Modify Weight Records**: Update an existing weight record for a specific entity and date.
+## Backend Setup
 
-### Installation and Setup
+### Requirements
 
-#### Backend (Weight Tracker API)
+- Python 3.x
+- Flask
+- Other dependencies listed in `requirements.txt`
 
-1. **Clone the repository**:
+### Installation
+
+1. Clone the repository:
     ```bash
-    git clone https://github.com/your_user/weight-tracker-api.git
-    cd weight-tracker-api
+    git clone <repository-url>
+    cd <repository-directory>
     ```
 
-2. **Set up a virtual environment and install dependencies**:
+2. Set up a virtual environment and activate it:
     ```bash
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+3. Install the dependencies:
+    ```bash
     pip install -r requirements.txt
     ```
 
-3. **Start the Flask application**:
+4. Run the Flask server:
     ```bash
-    python main.py
+    flask run
     ```
 
-#### Frontend (React Application)
+### API Endpoints
 
-1. **Navigate to the React application directory**:
+- **Register Entity:** `POST /register`
+- **Add Weight Record:** `POST /add-weight`
+- **Get Data:** `GET /get-data`
+- **Modify Entity:** `PUT /modify-entity`
+- **Delete Entity:** `DELETE /delete-entity`
+
+## Frontend Setup
+
+### Requirements
+
+- Node.js
+- npm (Node Package Manager)
+
+### Installation
+
+1. Navigate to the React app directory:
     ```bash
     cd weight-tracker
     ```
 
-2. **Install the dependencies**:
+2. Install the dependencies:
     ```bash
     npm install
     ```
 
-3. **Start the React application**:
+3. Start the React development server:
     ```bash
     npm start
     ```
 
-### Endpoints
-
-1. **Register entity**:
-   - **URL**: `/register`
-   - **Method**: `POST`
-   - **Request Body**:
-     ```json
-     {
-         "nombre": "EntityName"
-     }
-     ```
-   - **Description**: Registers a new entity.
-
-2. **Add record**:
-   - **URL**: `/add`
-   - **Method**: `POST`
-   - **Request Body**:
-     ```json
-     {
-         "nombre": "EntityName",
-         "fecha": "YYYY-MM-DD",
-         "peso": WeightInKg
-     }
-     ```
-   - **Description**: Adds a new weight record for an entity.
-
-3. **Read records**:
-   - **URL**: `/data?nombre=Entity1&nombre=Entity2`
-   - **Method**: `GET`
-   - **Description**: Returns the records of the specified entities. If no entity is specified, returns all records.
-
-4. **Create graph**:
-   - **URL**: `/graph?nombre=Entity1&nombre=Entity2`
-   - **Method**: `GET`
-   - **Description**: Creates a graph of the weights for the specified entities. If no entity is specified, creates a graph for all entities.
-
-5. **Determine trend**:
-   - **URL**: `/trend?nombre=EntityName`
-   - **Method**: `GET`
-   - **Description**: Calculates and returns the weight trend for the specified entity.
-
-6. **Modify entity name**:
-   - **URL**: `/modify-entity`
-   - **Method**: `PUT`
-   - **Request Body**:
-     ```json
-     {
-         "nombre_actual": "CurrentName",
-         "nombre_nuevo": "NewName"
-     }
-     ```
-   - **Description**: Modifies the name of an existing entity.
-
-7. **Delete entity**:
-   - **URL**: `/delete-entity`
-   - **Method**: `DELETE`
-   - **Request Body**:
-     ```json
-     {
-         "nombre": "EntityName"
-     }
-     ```
-   - **Description**: Deletes an entity along with all its weight records.
-
-8. **Modify weight record**:
-   - **URL**: `/modify-weight`
-   - **Method**: `PUT`
-   - **Request Body**:
-     ```json
-     {
-         "nombre": "EntityName",
-         "fecha": "YYYY-MM-DD",
-         "peso_nuevo": WeightInKg
-     }
-     ```
-   - **Description**: Modifies an existing weight record for a specific entity and date.
-
-### React Components
-
-1. **RegisterEntity**:
-   - Allows the user to register a new entity.
-   - Updates the dropdown list dynamically upon successful registration.
-
-2. **AddWeightRecord**:
-   - Allows the user to add a new weight record for an entity.
-   - The entity can be selected from a dropdown list.
-
-3. **ViewData**:
-   - Allows the user to view the weight records of a selected entity.
-   - Automatically updates the displayed data when the selected entity is changed.
-   - Allows the user to compare the weight of two entities in the same graph with different colors.
-
-4. **ModifyEntity**:
-   - Allows the user to modify the name of an existing entity.
-   - Updates the dropdown list dynamically upon successful modification.
-
-5. **DeleteEntity**:
-   - Allows the user to delete an entity along with all its weight records.
-   - Updates the dropdown list dynamically upon successful deletion.
-
-6. **ModifyWeightRecord**:
-   - Allows the user to modify an existing weight record for a specific entity and date.
-   - The entity can be selected from a dropdown list.
-
 ### Usage
 
-1. **Register a new entity**:
-   - Enter the name of the entity and click the "Register" button.
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Use the sidebar to navigate through different functionalities:
+    - **Register:** Register a new entity.
+    - **Add Weight:** Add weight records for registered entities.
+    - **View Data:** View and compare weight data for entities.
+    - **Modify Entity:** Update details of registered entities.
+    - **Delete Entity:** Remove registered entities and their weight records.
 
-2. **Add a weight record**:
-   - Select the entity from the dropdown list.
-   - Enter the date and weight, then click the "Add Weight" button.
+## File Structure
 
-3. **View weight records**:
-   - Select the entity from the dropdown list to automatically view its weight records.
+- **Backend:**
+  - `app.py`: Main application file.
+  - `register.py`: Handles registration of new entities.
+  - `addWeight.py`: Handles adding weight records.
+  - `readData.py`: Handles retrieving data.
+  - `modifyEntity.py`: Handles modifying entity details.
+  - `deleteEntity.py`: Handles deleting entities.
+  - `inclination.py`: Determines weight trend (gain/loss).
 
-4. **Compare entities**:
-   - Select the first entity from the dropdown list.
-   - Click the "Compare with another entity" button.
-   - Select the second entity from the new dropdown list.
-   - Choose different colors for each entity using the color pickers.
-   - The graph will display the weight data for both entities.
+- **Frontend:**
+  - `src/components`: Contains React components.
+  - `src/components/WeightChart.js`: Component for displaying weight charts.
+  - `src/components/ViewData.js`: Component for viewing and comparing data.
+  - `src/components/RegisterEntity.js`: Component for registering new entities.
+  - `src/components/AddWeightRecord.js`: Component for adding weight records.
+  - `src/components/ModifyEntity.js`: Component for modifying entity details.
+  - `src/components/DeleteEntity.js`: Component for deleting entities.
+  - `src/components/ThemeToggle.js`: Component for toggling between dark and light themes.
+  - `src/index.js`: Main entry point for the React application.
+  - `src/index.css`: Global CSS styles, including theme variables.
 
-5. **Modify an entity name**:
-   - Select the current name of the entity from the dropdown list.
-   - Enter the new name and click the "Modify Name" button.
+## Contributing
 
-6. **Delete an entity**:
-   - Select the entity from the dropdown list and click the "Delete" button.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-7. **Modify a weight record**:
-   - Select the entity from the dropdown list.
-   - Enter the date of the record to be modified and the new weight, then click the "Modify Weight" button.
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- Inspired by various fitness and health tracking applications.
