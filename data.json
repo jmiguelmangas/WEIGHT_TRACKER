@@ -19,7 +19,10 @@
                     "fecha": "2024-06-10",
                     "peso": "16"
                 }
-            ]
+            ],
+            "tipo": "perro",
+            "sexo": "Hembra",
+            "raza": "Beagle"
         },
         {
             "nombre": "Kanon",
@@ -31,6 +34,26 @@
                 {
                     "fecha": "2024-06-20",
                     "peso": "16"
+                },
+                {
+                    "fecha": "2024-06-22",
+                    "peso": "17"
+                }
+            ],
+            "tipo": "perro",
+            "sexo": "Macho",
+            "raza": "Beagle"
+        },
+        {
+            "nombre": "Jose",
+            "tipo": "persona",
+            "sexo": "Hombre",
+            "altura": 185,
+            "edad": 42,
+            "pesos": [
+                {
+                    "fecha": "2024-06-21",
+                    "peso": 85
                 }
             ]
         }

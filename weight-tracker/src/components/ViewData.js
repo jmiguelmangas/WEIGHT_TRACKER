@@ -4,7 +4,7 @@ import { format, parseISO } from 'date-fns';
 import EntitySelector from './EntitySelector';
 import WeightChart from './WeightChart';
 import { ChromePicker } from 'react-color';
-
+import './ViewData.css'
 function ViewData({ refresh, setRefresh, selectedEntity, setSelectedEntity }) {
   const [data, setData] = useState([]);
   const [secondEntity, setSecondEntity] = useState('');

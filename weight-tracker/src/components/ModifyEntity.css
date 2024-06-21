@@ -1,0 +1,63 @@
+.modify-entity {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .dark .modify-entity {
+    background: var(--sidebar-background-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .modify-entity h2 {
+    margin-top: 0;
+    color: var(--text-color);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    background-color: var(--button-background-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background-color);
+  }
+  
+  button[type="button"] {
+    background-color: #e74c3c;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #c0392b;
+  }
+  

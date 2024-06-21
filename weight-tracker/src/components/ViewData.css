@@ -1,0 +1,47 @@
+.view-data {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .dark .view-data {
+    background: var(--sidebar-background-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .view-data h2 {
+    margin-top: 0;
+    color: var(--text-color);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+  }
+  
+  .color-picker {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .color-picker button {
+    margin-right: 10px;
+  }
+  

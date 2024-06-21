@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import EntitySelector from './EntitySelector';
+import './ModifyWeightRecord.css'
 
 function ModifyWeightRecord({ refresh, setRefresh }) {
   const [selectedEntity, setSelectedEntity] = useState('');

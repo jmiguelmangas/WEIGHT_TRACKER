@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import EntitySelector from './EntitySelector';
+import './DeleteEntity.css'
 
 function DeleteEntity({ refresh, setRefresh, setSelectedEntity }) {
   const [selectedEntity, setLocalSelectedEntity] = useState('');
@@ -22,7 +23,7 @@ function DeleteEntity({ refresh, setRefresh, setSelectedEntity }) {
     <div>
       <h2>Delete Entity</h2>
       <EntitySelector selectedEntity={selectedEntity} setSelectedEntity={setLocalSelectedEntity} refresh={refresh} />
-      <button onClick={handleDeleteEntity}>Delete</button>
+      <button className="delete" onClick={handleDeleteEntity}>Delete</button>
     </div>
   );
 }
